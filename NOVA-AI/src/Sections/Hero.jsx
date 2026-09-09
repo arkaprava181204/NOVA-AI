@@ -1,7 +1,6 @@
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&display=swap');
 
-
 /* =========================================
    HERO SECTION
 ========================================= */
@@ -730,7 +729,6 @@ const CSS = `
 
 /* =========================================
    MOBILE
-   ONLY MOBILE BEHAVIOR CHANGES
 ========================================= */
 
 @media (max-width: 700px) {
@@ -823,8 +821,6 @@ const CSS = `
 
   /* =========================================
      MOBILE IMAGE CONTAINER
-     
-     Images are stacked vertically.
   ========================================= */
 
   .hero-visuals {
@@ -835,11 +831,13 @@ const CSS = `
 
     right: auto;
 
-    top: 58%;
+    top: auto;
+
+    bottom: 2%;
 
     width: 100%;
 
-    height: 48%;
+    height: 43vh;
 
     transform:
       translateX(-50%);
@@ -852,9 +850,9 @@ const CSS = `
 
     align-items: center;
 
-    justify-content: flex-start;
+    justify-content: center;
 
-    gap: 8px;
+    gap: 2px;
 
     pointer-events: none;
   }
@@ -862,8 +860,6 @@ const CSS = `
 
   /* =========================================
      MOBILE CARDS
-     
-     Larger than before.
   ========================================= */
 
   .hero-card {
@@ -880,6 +876,18 @@ const CSS = `
 
     flex-shrink: 0;
 
+    height: 13.2vh;
+
+    width: auto !important;
+
+    max-width: 90vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     transform:
       translateY(25px)
       scale(0.72)
@@ -893,37 +901,53 @@ const CSS = `
   }
 
 
+  .hero-card img {
+
+    display: block;
+
+    height: 100%;
+
+    width: auto;
+
+    max-width: 90vw;
+
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+
+
   /* =========================================
-     LARGER MOBILE IMAGE 1
+     MOBILE IMAGE 1
   ========================================= */
 
   .hero-card-1 {
 
-    width: 170px;
+    height: 13.2vh;
 
     animation-delay: 3.05s;
   }
 
 
   /* =========================================
-     LARGER MOBILE IMAGE 2
+     MOBILE IMAGE 2
   ========================================= */
 
   .hero-card-2 {
 
-    width: 205px;
+    height: 13.8vh;
 
     animation-delay: 3.4s;
   }
 
 
   /* =========================================
-     LARGER MOBILE IMAGE 3
+     MOBILE IMAGE 3
   ========================================= */
 
   .hero-card-3 {
 
-    width: 165px;
+    height: 13.2vh;
 
     animation-delay: 3.75s;
   }
@@ -1000,16 +1024,56 @@ const CSS = `
 
 
 /* =========================================
-   SMALL MOBILE
+   SHORT MOBILE SCREENS
 ========================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 700px) and (max-height: 700px) {
+
+  .hero-visuals {
+
+    height: 42vh;
+
+    bottom: 1%;
+  }
+
+
+  .hero-card {
+
+    height: 11.8vh;
+  }
+
+
+  .hero-card-1 {
+
+    height: 11.8vh;
+  }
+
+
+  .hero-card-2 {
+
+    height: 12.4vh;
+  }
+
+
+  .hero-card-3 {
+
+    height: 11.8vh;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
 
   .hero-wrap {
 
-    padding-left: 12px;
+    padding-left: 10px;
 
-    padding-right: 12px;
+    padding-right: 10px;
   }
 
 
@@ -1017,44 +1081,50 @@ const CSS = `
 
     font-size:
       clamp(
-        2.1rem,
-        16vw,
-        4rem
+        2rem,
+        15vw,
+        3.8rem
       );
   }
 
 
   .hero-tagline {
 
-    font-size: 0.95rem;
-  }
-
-
-  /* Larger images on small phones too */
-
-  .hero-card-1 {
-
-    width: 145px;
-  }
-
-
-  .hero-card-2 {
-
-    width: 175px;
-  }
-
-
-  .hero-card-3 {
-
-    width: 140px;
+    font-size: 0.9rem;
   }
 
 
   .hero-visuals {
 
-    gap: 6px;
+    height: 42vh;
 
-    top: 57%;
+    gap: 1px;
+
+    bottom: 1%;
+  }
+
+
+  .hero-card {
+
+    height: 11.5vh;
+  }
+
+
+  .hero-card-1 {
+
+    height: 11.5vh;
+  }
+
+
+  .hero-card-2 {
+
+    height: 12vh;
+  }
+
+
+  .hero-card-3 {
+
+    height: 11.5vh;
   }
 
 }
@@ -1211,7 +1281,6 @@ export default function Hero() {
 
       <div className="hero-visuals">
 
-
         <div className="hero-card hero-card-1">
 
           <img
@@ -1227,7 +1296,6 @@ export default function Hero() {
           <img
             src="/Hero_img_2.png"
             alt="Hero_img_2"
-            className=""
           />
 
         </div>
@@ -1241,7 +1309,6 @@ export default function Hero() {
           />
 
         </div>
-
 
       </div>
 
