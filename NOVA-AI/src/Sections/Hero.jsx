@@ -729,6 +729,7 @@ const CSS = `
 
 /* =========================================
    MOBILE
+   VERTICAL LONG STRIPS
 ========================================= */
 
 @media (max-width: 700px) {
@@ -739,7 +740,7 @@ const CSS = `
 
     padding:
       70px 18px
-      40px;
+      30px;
 
     align-items: center;
 
@@ -820,7 +821,7 @@ const CSS = `
 
 
   /* =========================================
-     MOBILE IMAGE CONTAINER
+     MOBILE IMAGE AREA
   ========================================= */
 
   .hero-visuals {
@@ -833,11 +834,11 @@ const CSS = `
 
     top: auto;
 
-    bottom: 2%;
+    bottom: 0;
 
     width: 100%;
 
-    height: 43vh;
+    height: 48svh;
 
     transform:
       translateX(-50%);
@@ -846,20 +847,20 @@ const CSS = `
 
     display: flex;
 
-    flex-direction: column;
+    flex-direction: row;
 
-    align-items: center;
+    align-items: flex-end;
 
     justify-content: center;
 
-    gap: 2px;
+    gap: 7px;
 
     pointer-events: none;
   }
 
 
   /* =========================================
-     MOBILE CARDS
+     MOBILE LONG STRIP CARDS
   ========================================= */
 
   .hero-card {
@@ -876,22 +877,24 @@ const CSS = `
 
     flex-shrink: 0;
 
-    height: 13.2vh;
+    width: 29vw !important;
 
-    width: auto !important;
+    height: 46svh;
 
-    max-width: 90vw;
+    max-width: 120px;
 
     display: flex;
 
-    align-items: center;
+    align-items: flex-end;
 
     justify-content: center;
+
+    overflow: hidden;
 
     transform:
       translateY(25px)
       scale(0.72)
-      rotate(7deg);
+      rotate(3deg);
 
     animation:
       heroRobotInMobile
@@ -901,53 +904,77 @@ const CSS = `
   }
 
 
+  /* =========================================
+     IMAGE INSIDE LONG STRIPS
+  ========================================= */
+
   .hero-card img {
 
     display: block;
 
+    width: 100%;
+
     height: 100%;
 
-    width: auto;
+    max-width: none;
 
-    max-width: 90vw;
+    max-height: none;
 
-    max-height: 100%;
+    object-fit: cover;
 
-    object-fit: contain;
+    object-position: center;
+
+    filter:
+      drop-shadow(
+        0 15px 25px
+        rgba(37,99,235,0.2)
+      );
   }
 
 
   /* =========================================
-     MOBILE IMAGE 1
+     MOBILE STRIP 1
   ========================================= */
 
   .hero-card-1 {
 
-    height: 13.2vh;
+    width: 28vw !important;
+
+    height: 44svh;
+
+    max-width: 115px;
 
     animation-delay: 3.05s;
   }
 
 
   /* =========================================
-     MOBILE IMAGE 2
+     MOBILE STRIP 2
   ========================================= */
 
   .hero-card-2 {
 
-    height: 13.8vh;
+    width: 32vw !important;
+
+    height: 48svh;
+
+    max-width: 130px;
 
     animation-delay: 3.4s;
   }
 
 
   /* =========================================
-     MOBILE IMAGE 3
+     MOBILE STRIP 3
   ========================================= */
 
   .hero-card-3 {
 
-    height: 13.2vh;
+    width: 28vw !important;
+
+    height: 44svh;
+
+    max-width: 115px;
 
     animation-delay: 3.75s;
   }
@@ -964,9 +991,9 @@ const CSS = `
       opacity: 0;
 
       transform:
-        translateY(25px)
+        translateY(40px)
         scale(0.72)
-        rotate(7deg);
+        rotate(5deg);
 
       filter:
         blur(4px);
@@ -977,9 +1004,9 @@ const CSS = `
       opacity: 1;
 
       transform:
-        translateY(-5px)
+        translateY(-8px)
         scale(1.04)
-        rotate(-2deg);
+        rotate(-1deg);
 
       filter:
         blur(0);
@@ -988,7 +1015,7 @@ const CSS = `
     70% {
 
       transform:
-        translateY(2px)
+        translateY(3px)
         scale(0.98)
         rotate(1deg);
     }
@@ -1010,7 +1037,7 @@ const CSS = `
 
 
   /* =========================================
-     REMOVE FLOATING ONLY ON MOBILE
+     REMOVE FLOATING ON MOBILE
   ========================================= */
 
   .hero-card-1 img,
@@ -1024,40 +1051,79 @@ const CSS = `
 
 
 /* =========================================
-   SHORT MOBILE SCREENS
+   SMALL MOBILE
 ========================================= */
 
-@media (max-width: 700px) and (max-height: 700px) {
+@media (max-width: 450px) {
+
+  .hero-wrap {
+
+    padding-left: 10px;
+
+    padding-right: 10px;
+
+    padding-bottom: 20px;
+  }
+
+
+  .hero-heading {
+
+    font-size:
+      clamp(
+        2.1rem,
+        16vw,
+        4rem
+      );
+  }
+
+
+  .hero-tagline {
+
+    font-size: 0.95rem;
+  }
+
 
   .hero-visuals {
 
-    height: 42vh;
+    height: 47svh;
 
-    bottom: 1%;
+    gap: 5px;
   }
 
 
   .hero-card {
 
-    height: 11.8vh;
+    height: 43svh;
+
+    width: 28vw !important;
+
+    max-width: 105px;
   }
 
 
   .hero-card-1 {
 
-    height: 11.8vh;
+    height: 42svh;
+
+    width: 27vw !important;
   }
 
 
   .hero-card-2 {
 
-    height: 12.4vh;
+    height: 47svh;
+
+    width: 31vw !important;
+
+    max-width: 120px;
   }
 
 
   .hero-card-3 {
 
-    height: 11.8vh;
+    height: 42svh;
+
+    width: 27vw !important;
   }
 
 }
@@ -1071,9 +1137,9 @@ const CSS = `
 
   .hero-wrap {
 
-    padding-left: 10px;
+    padding-left: 8px;
 
-    padding-right: 10px;
+    padding-right: 8px;
   }
 
 
@@ -1096,35 +1162,41 @@ const CSS = `
 
   .hero-visuals {
 
-    height: 42vh;
+    height: 45svh;
 
-    gap: 1px;
-
-    bottom: 1%;
+    gap: 4px;
   }
 
 
   .hero-card {
 
-    height: 11.5vh;
+    height: 41svh;
+
+    width: 28vw !important;
+
+    max-width: 95px;
   }
 
 
   .hero-card-1 {
 
-    height: 11.5vh;
+    height: 40svh;
   }
 
 
   .hero-card-2 {
 
-    height: 12vh;
+    height: 45svh;
+
+    width: 30vw !important;
+
+    max-width: 110px;
   }
 
 
   .hero-card-3 {
 
-    height: 11.5vh;
+    height: 40svh;
   }
 
 }
